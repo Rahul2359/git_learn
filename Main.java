@@ -1,28 +1,24 @@
-// prime number program
-import java.lang.Thread.State;
+// lcm of a number
 import java.util.*;
 public class Main{
     public static void main(String[] args) {
         Scanner sc=new Scanner(System.in);
         System.out.println("enter the number");
-        int num=sc.nextInt();
-        primeno(num);
+        int num1=sc.nextInt();
+        int num2=sc.nextInt();
+        System.out.println(lcm(num1,num2));
     }
-    public static void primeno(int num){
-        int i=2;
-        int a=0;
-        while(i<num){
-            if(num%i==0){
-             a++;   
+    public static int lcm(int num1,int num2){
+        int i=1;
+        int mul=1;
+        while(i<=num2){
+            mul=num1*i;
+            if(mul%num2==0){
+                return mul;
             }
             i++;
         }
-        if(a==0){
-            System.out.println("the number is a prime number");
-        }
-        else{
-            System.out.println("it is not a prime number");
-        }
+        return 0; //unreachable
         }
 
     }
