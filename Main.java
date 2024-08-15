@@ -1,4 +1,4 @@
-// factorial of a given number
+// prime number program
 import java.lang.Thread.State;
 import java.util.*;
 public class Main{
@@ -6,15 +6,23 @@ public class Main{
         Scanner sc=new Scanner(System.in);
         System.out.println("enter the number");
         int num=sc.nextInt();
-        factorial(num);
+        primeno(num);
     }
-    public static void factorial(int num){
-        int fact=1;
-        while(num>0){
-            fact=fact*num;
-            num--;
+    public static void primeno(int num){
+        int i=2;
+        int a=0;
+        while(i<num){
+            if(num%i==0){
+             a++;   
+            }
+            i++;
         }
-        System.out.println(fact);
+        if(a==0){
+            System.out.println("the number is a prime number");
+        }
+        else{
+            System.out.println("it is not a prime number");
+        }
+        }
 
     }
-}
