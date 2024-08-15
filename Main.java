@@ -5,29 +5,19 @@ public class Main{
         Scanner sc=new Scanner(System.in);
         System.out.println("enter the number");
         int num1=sc.nextInt();
-        int num2=sc.nextInt();
-        System.out.println(gcd(num1,num2));
+        System.out.println(reverse(num1));
     }
-    public static int gcd(int num1,int num2){
-        int i=2;
-        int s=small(num1, num2);
-        while(i<=s){
-            if(num1%i==0 && num2%i==0){
-                return i;
-            }
+    public static int reverse(int num1){
+        int digit=0;
+        int reverse=0;
+        while(num1!=0){
+            digit=num1%10;
+            reverse=reverse*10+digit;
+            num1=num1/10;           
             
-            i++;
         }
+        return reverse;
 
-        return 1;
-        }
-        public static int small(int num1,int num2){
-            if(num1<num2){
-                return num1;
-            }
-            else{
-                return num2;
-            }
         }
 
     }
