@@ -1,23 +1,26 @@
-// gcd of a number
+// fibonacci series
 import java.util.*;
 public class Main{
     public static void main(String[] args) {
         Scanner sc=new Scanner(System.in);
         System.out.println("enter the number");
-        int num1=sc.nextInt();
-        System.out.println(reverse(num1));
-    }
-    public static int reverse(int num1){
-        int digit=0;
-        int reverse=0;
-        while(num1!=0){
-            digit=num1%10;
-            reverse=reverse*10+digit;
-            num1=num1/10;           
-            
-        }
-        return reverse;
+        int num=sc.nextInt();
+        fibonacci(num);
 
+        }
+        public static void fibonacci(int num){
+            int num1=0;
+            int num2=1;
+            int num3=0;
+            int i=1;
+            System.out.print(num1+","+num2);
+            while(i<num){
+                num3=num1+num2;
+                num1=num2;
+                num2=num3;
+                System.out.print(","+num2);
+                i++;
+            }
         }
 
     }
