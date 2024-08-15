@@ -1,4 +1,4 @@
-// lcm of a number
+// gcd of a number
 import java.util.*;
 public class Main{
     public static void main(String[] args) {
@@ -6,19 +6,28 @@ public class Main{
         System.out.println("enter the number");
         int num1=sc.nextInt();
         int num2=sc.nextInt();
-        System.out.println(lcm(num1,num2));
+        System.out.println(gcd(num1,num2));
     }
-    public static int lcm(int num1,int num2){
-        int i=1;
-        int mul=1;
-        while(i<=num2){
-            mul=num1*i;
-            if(mul%num2==0){
-                return mul;
+    public static int gcd(int num1,int num2){
+        int i=2;
+        int s=small(num1, num2);
+        while(i<=s){
+            if(num1%i==0 && num2%i==0){
+                return i;
             }
+            
             i++;
         }
-        return 0; //unreachable
+
+        return 1;
+        }
+        public static int small(int num1,int num2){
+            if(num1<num2){
+                return num1;
+            }
+            else{
+                return num2;
+            }
         }
 
     }
