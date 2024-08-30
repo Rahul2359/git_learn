@@ -1,25 +1,20 @@
-//sum and avg of an array
+//number of occurance of a number in a array
 import java.util.*;
 class Main{
-    public static void main(String[] args) { 
+    public static void main(String[] args) {
         Scanner sc=new Scanner(System.in);
-        System.out.println("Enter the array elements");
-        int arr[]=new int[5];
+        int[] arr=ArrayUtility.inputArray();
+        System.out.println("Enter the number");
+        int num=sc.nextInt();
         int i=0;
-        while(i<5){
-            arr[i]=sc.nextInt();
+        int size=0;
+        while(i<arr.length){
+            if(arr[i]==num){
+                size++;
+                
+            }
             i++;
         }
-      int j=0;
-      int sum=0;
-      int avg=0;
-      while(j<5){
-        sum=sum+arr[j];
-        j++;
-      } 
-      avg=sum/arr.length;
-      System.out.println(sum); 
-      System.out.println(avg);
-
-    } 
+        System.out.println("Number of occurance of "+num+"="+size);
+    }
 }
