@@ -1,33 +1,25 @@
-//Loop paterns
+//sum and avg of an array
 import java.util.*;
 class Main{
     public static void main(String[] args) { 
         Scanner sc=new Scanner(System.in);
-        int[] arr=new int[10];
-        int[][] arr1=new int[5][5];
-        int [] arr2={1,2,3,4,5};
-        int [][] arr3={{1,2,3,4,5},{1,2,3,4},{3,5,3,6,2}};
-        arr[1]=9;
-        arr1[1][2]=9;
+        System.out.println("Enter the array elements");
+        int arr[]=new int[5];
         int i=0;
-        int j=0;
-        
-        while(i<arr2.length){
-            System.out.println(arr2[i]);
+        while(i<5){
+            arr[i]=sc.nextInt();
             i++;
         }
-        
-        while (j<arr3.length) {
-            int s=0;
-            while(s<arr3[j].length){
-                System.out.print(arr3[j][s]);
-                s++;
-            }
-            j++;
-            System.out.println();
-
-            
-        }
+      int j=0;
+      int sum=0;
+      int avg=0;
+      while(j<5){
+        sum=sum+arr[j];
+        j++;
+      } 
+      avg=sum/arr.length;
+      System.out.println(sum); 
+      System.out.println(avg);
 
     } 
 }
