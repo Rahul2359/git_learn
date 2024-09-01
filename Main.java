@@ -1,24 +1,41 @@
-//maximum and minimum element  in an array
+import java.lang.reflect.Array;
 import java.util.*;
 class Main{
     public static void main(String[] args) {
         Scanner sc=new Scanner(System.in);
-        int[] arr=ArrayUtility.inputArray();
-        int i=1;
-        int min=arr[0];
-        int max=arr[1];
-        while(i<arr.length){
-            if(max<arr[i]){
-                max=arr[i];
-            }
-            if(min>arr[i]){
-                min=arr[i];
+        int [] arr=ArrayUtility.inputArray();
+        if(asc(arr)==true){
+            System.out.println("the array is sorting in ascending order");
+        }
+        else if(desc(arr)==true){
+            System.out.println("The array is sorting in descending order");
+        }
+        else{
+            System.out.println("The array is not sorted");
+        }
+    }
+    public static boolean asc(int[] arr){
+        int i=0;
+        while(i<arr.length-1){
+            if(arr[i+1]<arr[i]){
+                return false;
             }
             i++;
-            
         }
-        System.out.println(min);
-        System.out.println(max);
-    }
+        return true;
+
+    } 
+    public static boolean desc(int[] arr){
+        int i=0;
+        while(i<arr.length-1){
+            if(arr[i+1]>arr[i]){
+                return false;
+            }
+            i++;
+        }
+        return true;
+
+    } 
     
+
 }
