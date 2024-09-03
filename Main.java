@@ -1,22 +1,31 @@
+//The array is palindrome or not 
 import java.util.*;
 class Main{
     public static void main(String args[]){
         Scanner sc=new Scanner(System.in);
         int arr[]=ArrayUtility.inputArray();
-        System.out.println("The reverse array is ");
-        int[] newArray=reverse_array(arr);
-        ArrayUtility.display_arr(newArray);
+        palindrome(arr);
+        if(palindrome(arr)==true){
+            System.out.println("The array is palindrome");
+        }else{
+            System.out.println("The array is not palindrome");
+        }
     }
-   public static int[] reverse_array(int arr[]){
-    int size=arr.length;
-    int [] reverse_array=new int[size];
+   public static boolean palindrome(int arr[]){
+    int [] reverse_array=new int[arr.length];
     int i=0;
     while(i<arr.length){
-        reverse_array[i]=arr[size-i-1];
-        i++;
+        reverse_array[i]=arr[arr.length-i-1];
+ 
+    i++;
+   }
+   int j=0;
+   while(j<arr.length){
+    if(reverse_array[j]!=arr[j]){
+        return false;
     }
-
-
-    return reverse_array;
+    j++;
+   }
+   return true;
    }
 }
