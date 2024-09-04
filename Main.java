@@ -1,31 +1,33 @@
-//The array is palindrome or not 
+//Merge two sorted array 
 import java.util.*;
 class Main{
     public static void main(String args[]){
         Scanner sc=new Scanner(System.in);
-        int arr[]=ArrayUtility.inputArray();
-        palindrome(arr);
-        if(palindrome(arr)==true){
-            System.out.println("The array is palindrome");
-        }else{
-            System.out.println("The array is not palindrome");
+        System.out.println("For first array");;
+        int []arr1=ArrayUtility.inputArray();
+        System.out.println("For second array");
+        int []arr2=ArrayUtility.inputArray();
+        int[] newArray=newArray(arr1, arr2);
+        System.out.println("The merge array is:");
+        ArrayUtility.display_arr(newArray);
+   }
+   public static int[] newArray(int[] arr1,int []arr2){
+        int i=0,k=0,j=0;
+        int size=arr1.length + arr2.length;
+        int [] newArray=new int[size];
+        while(i<arr1.length||j<arr2.length){
+            if(j==arr2.length||(i<arr1.length && arr1[i]<arr2[j])){
+                newArray[k]=arr1[i];
+                k++;
+                i++;
+            }
+            else{
+                newArray[k]=arr2[j];
+                j++;
+                k++;
+            }
+             
         }
-    }
-   public static boolean palindrome(int arr[]){
-    int [] reverse_array=new int[arr.length];
-    int i=0;
-    while(i<arr.length){
-        reverse_array[i]=arr[arr.length-i-1];
- 
-    i++;
-   }
-   int j=0;
-   while(j<arr.length){
-    if(reverse_array[j]!=arr[j]){
-        return false;
-    }
-    j++;
-   }
-   return true;
+        return newArray;
    }
 }
